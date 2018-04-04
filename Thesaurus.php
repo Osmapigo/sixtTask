@@ -10,7 +10,16 @@ class Thesaurus
     }
     public function getSynonyms($word)
     {
-        var_dump($this->thesaurus[$word]);
+        if (!empty($this->thesaurus[$word])) {
+            $synonyms = $this->thesaurus[$word];
+        } else {
+            $synonyms = [];
+        }
+        $synonymsResponse = [
+            'word' => $word,
+            'synonyms' => $synonyms
+        ];
+        return json_encode($synonymsResponse);
     }
 }
 
