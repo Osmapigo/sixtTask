@@ -1,5 +1,7 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * get the number which occurs odd times in the source array
  *
@@ -16,7 +18,8 @@ function getOddNumber($srcValues)
     }
 }
 
-class OddNumberTest extends PHPUnit_Framework_TestCase
+// ./vendor/bin/phpunit --bootstrap vendor/autoload.php OddNumbers.php
+class OddNumberTest extends TestCase
 {
     public function testOddNumber()
     {
